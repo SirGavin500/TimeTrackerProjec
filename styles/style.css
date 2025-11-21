@@ -34,7 +34,7 @@ body {
 
 .sidebar-top {
   background: var(--primary-blue);
-  padding: 2.2rem;
+  padding: 3rem 5rem 7rem 2.5rem; 
   border-radius: 1.2rem;
 }
 .sidebar {
@@ -120,7 +120,10 @@ body {
   height: auto;       
 }
 
-
+/* Added Hover effect from peer review */
+.card-header img:hover {
+  filter: brightness(0) invert(1); 
+}
 
 .current-hours {
   font-size: 2.6rem;
