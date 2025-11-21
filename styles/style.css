@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+  --primary-blue: hsl(246, 80%, 60%);
+  --work: hsl(15, 100%, 70%);
+  --play: hsl(195, 74%, 62%);
+  --study: hsl(348, 100%, 68%);
+  --exercise: hsl(145, 58%, 55%);
+  --social: hsl(264, 64%, 52%);
+  --self-care: hsl(43, 84%, 65%);
+
+  --dark-blue: hsl(235, 46%, 20%);
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  background: var(--very-dark-blue);
+  color: white;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-img {
+  width: 70px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.sidebar-top {
+  background: var(--primary-blue);
+  padding: 2.2rem;
+  border-radius: 1.2rem;
+}
+.sidebar {
+  background: var(--dark-blue);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.report-for {
+  color: var(--pale-blue);
+  font-size: 0.9rem;
+}
+
+.profile-name {
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+
+
+.sidebar-bottom button:hover,
+.sidebar-bottom .active {
+  color: white;
+  font-weight: 400;
+}
+.sidebar-bottom button {
+  background: none;
+  border: none;
+  color: var(--desaturated-blue);
+  font-size: 1.1rem;
+  text-align: left;
+  cursor: pointer;
+}
+.sidebar-bottom {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.cards {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.card-top {
+  height: 80px;
+  background-repeat: no-repeat;
+  background-position: right 15px top 10px;
+}
+
+.card {
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.card-content {
+  background: var(--dark-blue);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: -15px;
+}
+
+.card-content:hover {
+  background: hsl(235, 46%, 30%);
+  cursor: pointer;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  
+}
+
+.card-header img {
+  width: 18px;        
+  height: auto;       
+}
+
+
+
+.current-hours {
+  font-size: 2.6rem;
+  font-weight: 300;
+}
+
+.previous-hours {
+  color: var(--pale-blue);
+  margin-top: 0.4rem;
+}
+.card.work .card-top {
+  background-color: var(--work);
+  background-image: url("/images/icon-work.svg");
+}
+
+.card.play .card-top {
+  background-color: var(--play);
+  background-image: url("/images/icon-play.svg");
+}
+
+.card.study .card-top {
+  background-color: var(--study);
+  background-image: url("/images/icon-study.svg");
+}
+
+.card.exercise .card-top {
+  background-color: var(--exercise);
+  background-image: url("/images/icon-exercise.svg");
+}
+
+.card.social .card-top {
+  background-color: var(--social);
+  background-image: url("/images/icon-social.svg");
+}
+
+.card.self-care .card-top {
+  background-color: var(--self-care);
+  background-image: url("/images/icon-self-care.svg");
+}
+
+
+/* responsiveness */
+@media (max-width: 850px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .profile-img {
+    width: 60px;
+    margin-bottom: 0;
+  }
+
+  .profile-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-name {
+    font-size: 1.4rem;
+    line-height: 1.1;
+  }
+
+  .report-for {
+    font-size: 0.8rem;
+  }
+
+  .sidebar-bottom {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1.5rem;
+  }
+
+  .sidebar-bottom button {
+    text-align: center;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .current-hours {
+    font-size: 1.8rem;
+  }
+}
